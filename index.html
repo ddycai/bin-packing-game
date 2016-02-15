@@ -1,0 +1,48 @@
+<!doctype html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Bin Packing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h2>Bin Packing Co.</h2>
+        </div>
+        <div class="col-md-offset-3 col-md-6">
+          <p>Welcome employee #<script>document.write(Math.floor(Math.random() * 90000 + 10000))</script>. As usual, your job is to pack the <b>items</b> into the <b>boxes</b>. If you use less boxes than the next guy then you may get a promotion! Now get to work!</p>
+          <p>Each box holds 100 units. Double click on a box to empty it.</p>
+
+          <div id="msg-not-good-enough" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Disappointing!</strong> The next guy did it in fewer boxes. (and he's <em>only</em> a Junior Packer) Try again!
+          </div>
+
+          <div id="msg-good-work" class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Nice work!</strong> You packed as well as the next guy.
+            <a href="#" class="button-reset">New Game</a>?
+          </div>
+
+          <div id="msg-excellent" class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Excellent!</strong> You did better than the next guy.
+            <a href="#" class="button-reset">New Game</a>?
+          </div>
+
+          <div id="bins">
+          </div>
+        </div>
+        <div class="col-md-2">
+          Drag and drop these items into the boxes.
+          <div id="items"></div>
+          <div role="button" class="fakeLink button-reset">Reset</div> |
+          <div role="button" class="fakeLink button-new-game">New Game</div>
+        </div>
+      </div>
+    </div>
+    <script src="build/bin-packing.js"></script>
+  </body>
+</html>
