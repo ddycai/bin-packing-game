@@ -37,9 +37,10 @@ var Item = React.createClass({
   },
   componentDidMount: function() {
     $(ReactDOM.findDOMNode(this)).draggable({
+      cursor: "move",
       revert: true,
       revertDuration: 0,
-    });
+    }).disableSelection();
   },
   render: function() {
     var itemStyle = {
@@ -144,16 +145,10 @@ var Bin = React.createClass({
     $(ReactDOM.findDOMNode(this)).droppable({
       hoverClass: "bin-state-hover",
       accept: function(el) {
-        if (!el.hasClass('item')) {
-          return false;
-        }
         // Don't accept items if weight exceeds box capacity.
-        var i = $(el).attr('data-id');
+        var i = Number(el[0].getAttribute('data-id'));
         var j = bin.state.id;
-        if (bin.state.weight + items[i].weight > 100) {
-          return false;
-        }
-        return true;
+        return (bin.state.weight + items[i].weight <= 100)
       },
       drop: function( event, ui ) {
         return bin.addItem($(ui.draggable), $(this));
@@ -274,8 +269,8 @@ function endGame() {
     }
   }
 
-  // Find the best approx solution.
-  var bestSolution = Math.min(firstFit(items), firstFitDecreasing(items));
+  // Find the worse approximate solution.
+  var bestSolution = Math.max(firstFit(items), firstFitDecreasing(items));
 
   if (binsUsed > bestSolution) {
     $('#msg-not-good-enough').show();

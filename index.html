@@ -6,12 +6,20 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container ">
       <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="col-md-offset-4 col-md-6">
           <h2>Bin Packing Co.</h2>
         </div>
-        <div class="col-md-offset-3 col-md-6">
+      </div>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-2">
+          Drag and drop these items into the boxes.
+          <div id="items"></div>
+          <div role="button" class="fakeLink button-reset">Reset</div> |
+          <div role="button" class="fakeLink button-new-game">New Game</div>
+        </div>
+        <div class="col-md-6 center">
           <p>Welcome employee #<script>document.write(Math.floor(Math.random() * 90000 + 10000))</script>. As usual, your job is to pack the <b>items</b> into the <b>boxes</b>. If you use less boxes than the next guy then you may get a promotion! Now get to work!</p>
           <p>Each box holds 100 units. Double click on a box to empty it.</p>
 
@@ -34,12 +42,6 @@
 
           <div id="bins">
           </div>
-        </div>
-        <div class="col-md-2">
-          Drag and drop these items into the boxes.
-          <div id="items"></div>
-          <div role="button" class="fakeLink button-reset">Reset</div> |
-          <div role="button" class="fakeLink button-new-game">New Game</div>
         </div>
       </div>
     </div>

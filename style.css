@@ -1,9 +1,5 @@
-.container {
-	margin: auto;
-}
-
-#items {
-  z-index: 1000;
+.center {
+  margin: auto;
 }
 
 .fakeLink {
@@ -24,6 +20,7 @@
   background-color: #4ECAF3;
   color: white;
   text-align: center;
+  z-index: 1000;
 }
 
 .inner-bin, .bin {
@@ -54,7 +51,6 @@
   display: inline-block;
   text-align: center;
   margin: 5px;
-  transition: background-color 0.1s;
 }
 
 .bin-state-hover {
